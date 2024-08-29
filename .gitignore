@@ -5,3 +5,4 @@ generated
 coverage
 *.tgz
 .vscode/numbered-bookmarks.json
+.idea

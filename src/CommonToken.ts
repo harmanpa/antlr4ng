@@ -209,7 +209,7 @@ export class CommonToken implements WritableToken {
         return "<EOF>";
     }
 
-    public set text(text: string) {
+    public set text(text: string | undefined) {
         this.#text = text;
     }
 
