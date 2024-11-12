@@ -4,9 +4,9 @@
  * can be found in the LICENSE.txt file in the project root.
  */
 
-import { PredictionContext } from "./PredictionContext.js";
-import { HashMap } from "../misc/HashMap.js";
-import { ObjectEqualityComparator } from "../misc/ObjectEqualityComparator.js";
+import { PredictionContext } from "./PredictionContext";
+import { HashMap } from "../misc/HashMap";
+import { ObjectEqualityComparator } from "../misc/ObjectEqualityComparator";
 
 /**
  * Used to cache {@link PredictionContext} objects. Its used for the shared

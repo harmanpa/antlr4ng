@@ -4,11 +4,11 @@
  * can be found in the LICENSE.txt file in the project root.
  */
 
-import { AmbiguityInfo } from "./AmbiguityInfo.js";
-import { ContextSensitivityInfo } from "./ContextSensitivityInfo.js";
-import type { DecisionEventInfo } from "./DecisionEventInfo.js";
-import { LookaheadEventInfo } from "./LookaheadEventInfo.js";
-import { PredicateEvalInfo } from "./PredicateEvalInfo.js";
+import { AmbiguityInfo } from "./AmbiguityInfo";
+import { ContextSensitivityInfo } from "./ContextSensitivityInfo";
+import type { DecisionEventInfo } from "./DecisionEventInfo";
+import { LookaheadEventInfo } from "./LookaheadEventInfo";
+import { PredicateEvalInfo } from "./PredicateEvalInfo";
 
 export class DecisionInfo {
     /**
@@ -28,7 +28,7 @@ export class DecisionInfo {
      *
      * The value of this field contains the sum of differential results obtained
      * by {@link process.hrtime()}, and is not adjusted to compensate for JIT
-     * and/or garbage collection overhead. For best accuracy, use a modern Node.js
+     * and/or garbage collection overhead. For best accuracy, use a modern Node
      * version that provides precise results from {@link process.hrtime()}, and
      * perform profiling in a separate process which is warmed up by parsing the
      * input prior to profiling.

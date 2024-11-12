@@ -6,17 +6,17 @@
 
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 
-import { PredictionContext } from "./PredictionContext.js";
-import { ArrayPredictionContext } from "./ArrayPredictionContext.js";
-import { SingletonPredictionContext } from "./SingletonPredictionContext.js";
-import { EmptyPredictionContext } from "./EmptyPredictionContext.js";
-import { ATN } from "./ATN.js";
-import { PredictionContextCache } from "./PredictionContextCache.js";
-import { DoubleDict } from "../utils/DoubleDict.js";
-import { ParserRuleContext } from "../ParserRuleContext.js";
-import { RuleTransition } from "./RuleTransition.js";
-import { HashMap } from "../misc/HashMap.js";
-import { ObjectEqualityComparator } from "../misc/ObjectEqualityComparator.js";
+import { PredictionContext } from "./PredictionContext";
+import { ArrayPredictionContext } from "./ArrayPredictionContext";
+import { SingletonPredictionContext } from "./SingletonPredictionContext";
+import { EmptyPredictionContext } from "./EmptyPredictionContext";
+import { ATN } from "./ATN";
+import { PredictionContextCache } from "./PredictionContextCache";
+import { DoubleDict } from "../utils/DoubleDict";
+import { ParserRuleContext } from "../ParserRuleContext";
+import { RuleTransition } from "./RuleTransition";
+import { HashMap } from "../misc/HashMap";
+import { ObjectEqualityComparator } from "../misc/ObjectEqualityComparator";
 
 /**
  * Convert a {@link RuleContext} tree to a {@link PredictionContext} graph.

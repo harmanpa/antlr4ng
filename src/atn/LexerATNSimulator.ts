@@ -6,26 +6,26 @@
 
 /* eslint-disable jsdoc/require-param, jsdoc/require-returns */
 
-import { Token } from "../Token.js";
-import { Lexer, type LexerOptions } from "../Lexer.js";
-import { ATN } from "./ATN.js";
-import { ATNSimulator } from "./ATNSimulator.js";
-import { DFAState } from "../dfa/DFAState.js";
-import { OrderedATNConfigSet } from "./OrderedATNConfigSet.js";
-import { PredictionContext } from "./PredictionContext.js";
-import { SingletonPredictionContext } from "./SingletonPredictionContext.js";
-import { LexerATNConfig } from "./LexerATNConfig.js";
-import { LexerActionExecutor } from "./LexerActionExecutor.js";
-import { LexerNoViableAltException } from "../LexerNoViableAltException.js";
-import { DFA } from "../dfa/DFA.js";
-import { PredictionContextCache } from "./PredictionContextCache.js";
-import { CharStream } from "../CharStream.js";
-import { ATNConfigSet } from "./ATNConfigSet.js";
-import { Transition } from "./Transition.js";
-import { ATNState } from "./ATNState.js";
-import { RuleTransition } from "./RuleTransition.js";
-import { PredicateTransition } from "./PredicateTransition.js";
-import { ActionTransition } from "./ActionTransition.js";
+import { Token } from "../Token";
+import { Lexer, type LexerOptions } from "../Lexer";
+import { ATN } from "./ATN";
+import { ATNSimulator } from "./ATNSimulator";
+import { DFAState } from "../dfa/DFAState";
+import { OrderedATNConfigSet } from "./OrderedATNConfigSet";
+import { PredictionContext } from "./PredictionContext";
+import { SingletonPredictionContext } from "./SingletonPredictionContext";
+import { LexerATNConfig } from "./LexerATNConfig";
+import { LexerActionExecutor } from "./LexerActionExecutor";
+import { LexerNoViableAltException } from "../LexerNoViableAltException";
+import { DFA } from "../dfa/DFA";
+import { PredictionContextCache } from "./PredictionContextCache";
+import { CharStream } from "../CharStream";
+import { ATNConfigSet } from "./ATNConfigSet";
+import { Transition } from "./Transition";
+import { ATNState } from "./ATNState";
+import { RuleTransition } from "./RuleTransition";
+import { PredicateTransition } from "./PredicateTransition";
+import { ActionTransition } from "./ActionTransition";
 
 /**
  * When we hit an accept state in either the DFA or the ATN, we

@@ -4,20 +4,20 @@
  * can be found in the LICENSE.txt file in the project root.
  */
 
-import { Token } from "../Token.js";
-import { IntervalSet } from "../misc/IntervalSet.js";
-import { RuleTransition } from "./RuleTransition.js";
-import { NotSetTransition } from "./NotSetTransition.js";
-import { predictionContextFromRuleContext } from "./PredictionContextUtils.js";
-import { PredictionContext } from "./PredictionContext.js";
-import { SingletonPredictionContext } from "./SingletonPredictionContext.js";
-import { BitSet } from "../misc/BitSet.js";
-import { ATNState } from "./ATNState.js";
-import { ATN } from "./ATN.js";
-import { ParserRuleContext } from "../ParserRuleContext.js";
-import { Transition } from "./Transition.js";
-import { HashSet } from "../misc/HashSet.js";
-import { ATNConfig } from "./ATNConfig.js";
+import { Token } from "../Token";
+import { IntervalSet } from "../misc/IntervalSet";
+import { RuleTransition } from "./RuleTransition";
+import { NotSetTransition } from "./NotSetTransition";
+import { predictionContextFromRuleContext } from "./PredictionContextUtils";
+import { PredictionContext } from "./PredictionContext";
+import { SingletonPredictionContext } from "./SingletonPredictionContext";
+import { BitSet } from "../misc/BitSet";
+import { ATNState } from "./ATNState";
+import { ATN } from "./ATN";
+import { ParserRuleContext } from "../ParserRuleContext";
+import { Transition } from "./Transition";
+import { HashSet } from "../misc/HashSet";
+import { ATNConfig } from "./ATNConfig";
 
 export class LL1Analyzer {
     /**

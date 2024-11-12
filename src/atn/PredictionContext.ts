@@ -6,9 +6,9 @@
 
 /* eslint-disable @typescript-eslint/naming-convention, jsdoc/require-returns, jsdoc/require-param */
 
-import { Recognizer } from "../Recognizer.js";
-import { MurmurHash } from "../utils/MurmurHash.js";
-import { ATNSimulator } from "./ATNSimulator.js";
+import { Recognizer } from "../Recognizer";
+import { MurmurHash } from "../utils/MurmurHash";
+import { ATNSimulator } from "./ATNSimulator";
 
 // Most of the implementation is located in PredictionContextUtils.ts, to avoid circular dependencies.
 
