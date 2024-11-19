@@ -1,0 +1,34 @@
+import { ATNState } from "./atn/ATNState";
+import { InterpreterRuleContext } from "./InterpreterRuleContext";
+import { Parser } from "./Parser";
+import { RecognitionException } from "./RecognitionException";
+import { Token } from "./Token";
+import { ATN } from "./atn/ATN";
+import { Vocabulary } from "./Vocabulary";
+import { TokenStream } from "./TokenStream";
+import { ParserRuleContext } from "./ParserRuleContext";
+import { DecisionState } from "./atn/DecisionState";
+export declare class ParserInterpreter extends Parser {
+    #private;
+    rootContext: InterpreterRuleContext;
+    overrideDecisionRoot: InterpreterRuleContext | null;
+    protected parentContextStack: Array<[ParserRuleContext | null, number]>;
+    constructor(grammarFileName: string, vocabulary: Vocabulary, ruleNames: string[], atn: ATN, input: TokenStream);
+    reset(): void;
+    get atn(): ATN;
+    get vocabulary(): Vocabulary;
+    get ruleNames(): string[];
+    get grammarFileName(): string;
+    get atnState(): ATNState;
+    parse(startRuleIndex: number): ParserRuleContext;
+    addDecisionOverride(decision: number, tokenIndex: number, forcedAlt: number): void;
+    get overrideDecision(): number;
+    get overrideDecisionInputIndex(): number;
+    enterRecursionRule(localctx: ParserRuleContext, state: number, ruleIndex: number, precedence: number): void;
+    protected visitState(p: ATNState): void;
+    protected visitDecisionState(p: DecisionState): number;
+    protected createInterpreterRuleContext(parent: ParserRuleContext | null, invokingStateNumber: number, ruleIndex: number): InterpreterRuleContext;
+    protected visitRuleStopState(p: ATNState): void;
+    protected recover(e: RecognitionException): void;
+    protected recoverInline(): Token;
+}
