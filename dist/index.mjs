@@ -1,6 +1,3 @@
-var __defProp = Object.defineProperty;
-var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
-
 // src/IntStream.ts
 var IntStream;
 ((IntStream2) => {
@@ -19,16 +16,13 @@ var Token;
   Token2.HIDDEN_CHANNEL = 1;
   Token2.MIN_USER_CHANNEL_VALUE = 2;
 })(Token || (Token = {}));
-var isToken = /* @__PURE__ */ __name((candidate) => {
+var isToken = (candidate) => {
   const token = candidate;
   return token.tokenSource !== void 0 && token.channel !== void 0;
-}, "isToken");
+};
 
 // src/misc/Interval.ts
 var Interval = class _Interval {
-  static {
-    __name(this, "Interval");
-  }
   static INVALID_INTERVAL = new _Interval(-1, -2);
   static INTERVAL_POOL_MAX_VALUE = 1e3;
   start;
@@ -140,9 +134,6 @@ var Interval = class _Interval {
 
 // src/Vocabulary.ts
 var Vocabulary = class _Vocabulary {
-  static {
-    __name(this, "Vocabulary");
-  }
   static EMPTY_NAMES = [];
   /**
    * Gets an empty {@link Vocabulary} instance.
@@ -273,9 +264,6 @@ var r2 = 13;
 var m = 5;
 var n = 3864292196;
 var MurmurHash = class _MurmurHash {
-  static {
-    __name(this, "MurmurHash");
-  }
   static #defaultSeed = 701;
   constructor() {
   }
@@ -342,9 +330,6 @@ var MurmurHash = class _MurmurHash {
 
 // src/misc/IntervalSet.ts
 var IntervalSet = class _IntervalSet {
-  static {
-    __name(this, "IntervalSet");
-  }
   /** The list of sorted, disjoint intervals. */
   #intervals = [];
   #cachedHashCode;
@@ -814,9 +799,6 @@ var IntervalSet = class _IntervalSet {
 
 // src/atn/Transition.ts
 var Transition = class {
-  static {
-    __name(this, "Transition");
-  }
   static INVALID = 0;
   static EPSILON = 1;
   static RANGE = 2;
@@ -854,9 +836,6 @@ var Transition = class {
 
 // src/atn/SetTransition.ts
 var SetTransition = class extends Transition {
-  static {
-    __name(this, "SetTransition");
-  }
   set;
   constructor(target, set) {
     super(target);
@@ -882,9 +861,6 @@ var SetTransition = class extends Transition {
 
 // src/atn/NotSetTransition.ts
 var NotSetTransition = class extends SetTransition {
-  static {
-    __name(this, "NotSetTransition");
-  }
   get transitionType() {
     return Transition.NOT_SET;
   }
@@ -898,9 +874,6 @@ var NotSetTransition = class extends SetTransition {
 
 // src/atn/PredictionContext.ts
 var PredictionContext = class _PredictionContext {
-  static {
-    __name(this, "PredictionContext");
-  }
   /**
    * Represents `$` in an array in full context mode, when `$`
    * doesn't mean wildcard: `$ + x = [$,x]`. Here,
@@ -952,16 +925,16 @@ var PredictionContext = class _PredictionContext {
 };
 
 // src/utils/helpers.ts
-var isComparable = /* @__PURE__ */ __name((candidate) => {
+var isComparable = (candidate) => {
   return typeof candidate.equals === "function";
-}, "isComparable");
-var valueToString = /* @__PURE__ */ __name((v) => {
+};
+var valueToString = (v) => {
   return v === null ? "null" : v;
-}, "valueToString");
-var arrayToString = /* @__PURE__ */ __name((value) => {
+};
+var arrayToString = (value) => {
   return Array.isArray(value) ? "[" + value.map(valueToString).join(", ") + "]" : "null";
-}, "arrayToString");
-var equalArrays = /* @__PURE__ */ __name((a, b) => {
+};
+var equalArrays = (a, b) => {
   if (a === b) {
     return true;
   }
@@ -979,8 +952,8 @@ var equalArrays = /* @__PURE__ */ __name((a, b) => {
     }
   }
   return true;
-}, "equalArrays");
-var equalNumberArrays = /* @__PURE__ */ __name((a, b) => {
+};
+var equalNumberArrays = (a, b) => {
   if (a === b) {
     return true;
   }
@@ -993,20 +966,17 @@ var equalNumberArrays = /* @__PURE__ */ __name((a, b) => {
     }
   }
   return true;
-}, "equalNumberArrays");
-var escapeWhitespace = /* @__PURE__ */ __name((s, escapeSpaces = false) => {
+};
+var escapeWhitespace = (s, escapeSpaces = false) => {
   s = s.replace(/\t/g, "\\t").replace(/\n/g, "\\n").replace(/\r/g, "\\r");
   if (escapeSpaces) {
     s = s.replace(/ /g, "\xB7");
   }
   return s;
-}, "escapeWhitespace");
+};
 
 // src/atn/ArrayPredictionContext.ts
 var ArrayPredictionContext = class _ArrayPredictionContext extends PredictionContext {
-  static {
-    __name(this, "ArrayPredictionContext");
-  }
   parents = [];
   returnStates = [];
   constructor(parents, returnStates) {
@@ -1059,9 +1029,6 @@ var ArrayPredictionContext = class _ArrayPredictionContext extends PredictionCon
 
 // src/atn/SingletonPredictionContext.ts
 var SingletonPredictionContext = class _SingletonPredictionContext extends PredictionContext {
-  static {
-    __name(this, "SingletonPredictionContext");
-  }
   parent;
   returnState;
   constructor(parent, returnState) {
@@ -1120,9 +1087,6 @@ var SingletonPredictionContext = class _SingletonPredictionContext extends Predi
 
 // src/atn/EmptyPredictionContext.ts
 var EmptyPredictionContext = class _EmptyPredictionContext extends SingletonPredictionContext {
-  static {
-    __name(this, "EmptyPredictionContext");
-  }
   /**
    * Represents `$` in local context prediction, which means wildcard.
    * `*+x = *`.
@@ -1153,9 +1117,6 @@ var EmptyPredictionContext = class _EmptyPredictionContext extends SingletonPred
 
 // src/tree/TerminalNode.ts
 var TerminalNode = class {
-  static {
-    __name(this, "TerminalNode");
-  }
   parent = null;
   symbol;
   constructor(symbol) {
@@ -1200,9 +1161,6 @@ var TerminalNode = class {
 
 // src/tree/ErrorNode.ts
 var ErrorNode = class extends TerminalNode {
-  static {
-    __name(this, "ErrorNode");
-  }
   accept(visitor) {
     return visitor.visitErrorNode(this);
   }
@@ -1210,9 +1168,6 @@ var ErrorNode = class extends TerminalNode {
 
 // src/CommonToken.ts
 var CommonToken = class _CommonToken {
-  static {
-    __name(this, "CommonToken");
-  }
   /**
    * An empty tuple which is used as the default value of
    * {@link source} for tokens that do not have a source.
@@ -1395,9 +1350,6 @@ var CommonToken = class _CommonToken {
 
 // src/tree/Trees.ts
 var Trees = class _Trees {
-  static {
-    __name(this, "Trees");
-  }
   /**
    * Print out a whole tree in LISP form. {@link getNodeText} is used on the
    * node payloads to get the text for the nodes.  Detect
@@ -1572,9 +1524,6 @@ var Trees = class _Trees {
 
 // src/ParserRuleContext.ts
 var ParserRuleContext = class _ParserRuleContext {
-  static {
-    __name(this, "ParserRuleContext");
-  }
   static empty = new _ParserRuleContext(null);
   start = null;
   stop = null;
@@ -1819,9 +1768,6 @@ var ParserRuleContext = class _ParserRuleContext {
 
 // src/misc/ObjectEqualityComparator.ts
 var ObjectEqualityComparator = class _ObjectEqualityComparator {
-  static {
-    __name(this, "ObjectEqualityComparator");
-  }
   static instance = new _ObjectEqualityComparator();
   hashCode(obj) {
     if (obj == null) {
@@ -1839,9 +1785,6 @@ var ObjectEqualityComparator = class _ObjectEqualityComparator {
 
 // src/misc/DefaultEqualityComparator.ts
 var DefaultEqualityComparator = class _DefaultEqualityComparator {
-  static {
-    __name(this, "DefaultEqualityComparator");
-  }
   static instance = new _DefaultEqualityComparator();
   hashCode(obj) {
     if (obj == null) {
@@ -1862,9 +1805,6 @@ var DefaultEqualityComparator = class _DefaultEqualityComparator {
 
 // src/misc/HashSet.ts
 var HashSet = class _HashSet {
-  static {
-    __name(this, "HashSet");
-  }
   static #defaultLoadFactor = 0.75;
   static #initialCapacity = 16;
   // must be power of 2
@@ -2157,9 +2097,6 @@ var HashSet = class _HashSet {
 
 // src/misc/MapKeyEqualityOperator.ts
 var MapKeyEqualityComparator = class {
-  static {
-    __name(this, "MapKeyEqualityComparator");
-  }
   keyComparator;
   constructor(keyComparator) {
     this.keyComparator = keyComparator;
@@ -2174,9 +2111,6 @@ var MapKeyEqualityComparator = class {
 
 // src/misc/HashMap.ts
 var HashMap = class _HashMap {
-  static {
-    __name(this, "HashMap");
-  }
   backingStore;
   constructor(keyComparer) {
     if (keyComparer instanceof _HashMap) {
@@ -2258,7 +2192,7 @@ var HashMap = class _HashMap {
 };
 
 // src/atn/PredictionContextUtils.ts
-var predictionContextFromRuleContext = /* @__PURE__ */ __name((atn, outerContext) => {
+var predictionContextFromRuleContext = (atn, outerContext) => {
   if (!outerContext) {
     outerContext = ParserRuleContext.empty;
   }
@@ -2269,8 +2203,8 @@ var predictionContextFromRuleContext = /* @__PURE__ */ __name((atn, outerContext
   const state = atn.states[outerContext.invokingState];
   const transition = state.transitions[0];
   return SingletonPredictionContext.create(parent, transition.followState.stateNumber);
-}, "predictionContextFromRuleContext");
-var getCachedPredictionContext = /* @__PURE__ */ __name((context, contextCache, visited) => {
+};
+var getCachedPredictionContext = (context, contextCache, visited) => {
   if (context.isEmpty()) {
     return context;
   }
@@ -2315,8 +2249,8 @@ var getCachedPredictionContext = /* @__PURE__ */ __name((context, contextCache, 
   visited.set(updated, updated);
   visited.set(context, updated);
   return updated;
-}, "getCachedPredictionContext");
-var merge = /* @__PURE__ */ __name((a, b, rootIsWildcard, mergeCache) => {
+};
+var merge = (a, b, rootIsWildcard, mergeCache) => {
   if (a === b) {
     return a;
   }
@@ -2338,8 +2272,8 @@ var merge = /* @__PURE__ */ __name((a, b, rootIsWildcard, mergeCache) => {
     b = new ArrayPredictionContext([b.parent], [b.returnState]);
   }
   return mergeArrays(a, b, rootIsWildcard, mergeCache);
-}, "merge");
-var mergeArrays = /* @__PURE__ */ __name((a, b, rootIsWildcard, mergeCache) => {
+};
+var mergeArrays = (a, b, rootIsWildcard, mergeCache) => {
   if (mergeCache) {
     let previous = mergeCache.get(a, b);
     if (previous) {
@@ -2430,8 +2364,8 @@ var mergeArrays = /* @__PURE__ */ __name((a, b, rootIsWildcard, mergeCache) => {
     console.log("mergeArrays a=" + a + ",b=" + b + " -> " + merged);
   }
   return merged;
-}, "mergeArrays");
-var combineCommonParents = /* @__PURE__ */ __name((parents) => {
+};
+var combineCommonParents = (parents) => {
   const uniqueParents = new HashMap(ObjectEqualityComparator.instance);
   for (const parent of parents) {
     if (parent) {
@@ -2445,8 +2379,8 @@ var combineCommonParents = /* @__PURE__ */ __name((parents) => {
       parents[q] = uniqueParents.get(parents[q]) ?? null;
     }
   }
-}, "combineCommonParents");
-var mergeSingletons = /* @__PURE__ */ __name((a, b, rootIsWildcard, mergeCache) => {
+};
+var mergeSingletons = (a, b, rootIsWildcard, mergeCache) => {
   if (mergeCache !== null) {
     let previous = mergeCache.get(a, b);
     if (previous !== null) {
@@ -2508,8 +2442,8 @@ var mergeSingletons = /* @__PURE__ */ __name((a, b, rootIsWildcard, mergeCache) 
     }
     return aNew;
   }
-}, "mergeSingletons");
-var mergeRoot = /* @__PURE__ */ __name((a, b, rootIsWildcard) => {
+};
+var mergeRoot = (a, b, rootIsWildcard) => {
   if (rootIsWildcard) {
     if (a === PredictionContext.EMPTY || b === PredictionContext.EMPTY) {
       return PredictionContext.EMPTY;
@@ -2533,13 +2467,10 @@ var mergeRoot = /* @__PURE__ */ __name((a, b, rootIsWildcard) => {
     }
   }
   return null;
-}, "mergeRoot");
+};
 
 // src/misc/BitSet.ts
 var BitSet = class {
-  static {
-    __name(this, "BitSet");
-  }
   data;
   /**
    * Creates a new bit set. All bits are initially `false`.
@@ -2567,7 +2498,7 @@ var BitSet = class {
       [Symbol.iterator]() {
         return this;
       },
-      next: /* @__PURE__ */ __name(() => {
+      next: () => {
         while (currentIndex < length) {
           if (currentWord !== 0) {
             const t = currentWord & -currentWord;
@@ -2582,7 +2513,7 @@ var BitSet = class {
           }
         }
         return { done: true, value: void 0 };
-      }, "next")
+      }
     };
   }
   /**
@@ -2722,9 +2653,6 @@ var BitSet = class {
 
 // src/atn/ATNState.ts
 var ATNState = class _ATNState {
-  static {
-    __name(this, "ATNState");
-  }
   static INVALID_STATE_NUMBER = -1;
   static INVALID_TYPE = 0;
   static BASIC = 1;
@@ -2784,9 +2712,6 @@ var ATNState = class _ATNState {
 
 // src/atn/SemanticContext.ts
 var SemanticContext = class _SemanticContext {
-  static {
-    __name(this, "SemanticContext");
-  }
   cachedHashCode;
   static andContext(a, b) {
     if (a === null || a === _SemanticContext.NONE) {
@@ -2848,9 +2773,6 @@ var SemanticContext = class _SemanticContext {
   }
 };
 var AND = class _AND extends SemanticContext {
-  static {
-    __name(this, "AND");
-  }
   operands;
   /**
    * A semantic context which is true whenever none of the contained contexts
@@ -2954,9 +2876,6 @@ var AND = class _AND extends SemanticContext {
   }
 };
 var OR = class _OR extends SemanticContext {
-  static {
-    __name(this, "OR");
-  }
   operands;
   /**
    * A semantic context which is true whenever at least one of the contained
@@ -3053,9 +2972,6 @@ var OR = class _OR extends SemanticContext {
 };
 ((SemanticContext2) => {
   class Predicate extends SemanticContext2 {
-    static {
-      __name(this, "Predicate");
-    }
     ruleIndex;
     predIndex;
     isCtxDependent;
@@ -3093,9 +3009,6 @@ var OR = class _OR extends SemanticContext {
   }
   SemanticContext2.Predicate = Predicate;
   class PrecedencePredicate extends SemanticContext2 {
-    static {
-      __name(this, "PrecedencePredicate");
-    }
     precedence;
     constructor(precedence) {
       super();
@@ -3132,9 +3045,6 @@ var OR = class _OR extends SemanticContext {
 
 // src/atn/ATNConfig.ts
 var ATNConfig = class _ATNConfig {
-  static {
-    __name(this, "ATNConfig");
-  }
   /** The ATN state associated with this configuration */
   state;
   /** What alt (or lexer rule) is predicted by this configuration */
@@ -3236,9 +3146,6 @@ var ATNConfig = class _ATNConfig {
 
 // src/atn/LL1Analyzer.ts
 var LL1Analyzer = class _LL1Analyzer {
-  static {
-    __name(this, "LL1Analyzer");
-  }
   /**
    * Special value added to the lookahead sets to indicate that we hit
    * a predicate during analysis if `seeThruPreds==false`.
@@ -3445,9 +3352,6 @@ var LL1Analyzer = class _LL1Analyzer {
 
 // src/atn/ATN.ts
 var ATN = class _ATN {
-  static {
-    __name(this, "ATN");
-  }
   static INVALID_ALT_NUMBER = 0;
   /** Represents the type of recognizer an ATN applies to */
   static LEXER = 0;
@@ -3583,9 +3487,6 @@ var ATN = class _ATN {
 
 // src/atn/ATNConfigSet.ts
 var KeyTypeEqualityComparer = class _KeyTypeEqualityComparer {
-  static {
-    __name(this, "KeyTypeEqualityComparer");
-  }
   static instance = new _KeyTypeEqualityComparer();
   hashCode(config) {
     let hashCode = 7;
@@ -3602,9 +3503,6 @@ var KeyTypeEqualityComparer = class _KeyTypeEqualityComparer {
   }
 };
 var ATNConfigSet = class {
-  static {
-    __name(this, "ATNConfigSet");
-  }
   /**
    * The reason that we need this is because we don't want the hash map to use
    * the standard hash code and equals. We need all configurations with the
@@ -3805,52 +3703,34 @@ var ATNConfigSet = class {
 
 // src/atn/BasicState.ts
 var BasicState = class extends ATNState {
-  static {
-    __name(this, "BasicState");
-  }
   static stateType = ATNState.BASIC;
 };
 
 // src/atn/DecisionState.ts
 var DecisionState = class extends ATNState {
-  static {
-    __name(this, "DecisionState");
-  }
   decision = -1;
   nonGreedy = false;
 };
 
 // src/atn/BlockStartState.ts
 var BlockStartState = class extends DecisionState {
-  static {
-    __name(this, "BlockStartState");
-  }
   endState;
 };
 
 // src/atn/BlockEndState.ts
 var BlockEndState = class extends ATNState {
-  static {
-    __name(this, "BlockEndState");
-  }
   static stateType = ATNState.BLOCK_END;
   startState;
 };
 
 // src/atn/LoopEndState.ts
 var LoopEndState = class extends ATNState {
-  static {
-    __name(this, "LoopEndState");
-  }
   static stateType = ATNState.LOOP_END;
   loopBackState;
 };
 
 // src/atn/RuleStartState.ts
 var RuleStartState = class extends ATNState {
-  static {
-    __name(this, "RuleStartState");
-  }
   static stateType = ATNState.RULE_START;
   stopState;
   isLeftRecursiveRule = false;
@@ -3859,41 +3739,26 @@ var RuleStartState = class extends ATNState {
 
 // src/atn/RuleStopState.ts
 var RuleStopState = class extends ATNState {
-  static {
-    __name(this, "RuleStopState");
-  }
   static stateType = ATNState.RULE_STOP;
 };
 
 // src/atn/TokensStartState.ts
 var TokensStartState = class extends DecisionState {
-  static {
-    __name(this, "TokensStartState");
-  }
   static stateType = ATNState.TOKEN_START;
 };
 
 // src/atn/PlusLoopbackState.ts
 var PlusLoopbackState = class extends DecisionState {
-  static {
-    __name(this, "PlusLoopbackState");
-  }
   static stateType = ATNState.PLUS_LOOP_BACK;
 };
 
 // src/atn/StarLoopbackState.ts
 var StarLoopbackState = class extends ATNState {
-  static {
-    __name(this, "StarLoopbackState");
-  }
   static stateType = ATNState.STAR_LOOP_BACK;
 };
 
 // src/atn/StarLoopEntryState.ts
 var StarLoopEntryState = class extends DecisionState {
-  static {
-    __name(this, "StarLoopEntryState");
-  }
   static stateType = ATNState.STAR_LOOP_ENTRY;
   // This is always set during ATN deserialization
   loopBackState;
@@ -3912,34 +3777,22 @@ var StarLoopEntryState = class extends DecisionState {
 
 // src/atn/PlusBlockStartState.ts
 var PlusBlockStartState = class extends BlockStartState {
-  static {
-    __name(this, "PlusBlockStartState");
-  }
   static stateType = ATNState.PLUS_BLOCK_START;
   loopBackState;
 };
 
 // src/atn/StarBlockStartState.ts
 var StarBlockStartState = class extends BlockStartState {
-  static {
-    __name(this, "StarBlockStartState");
-  }
   static stateType = ATNState.STAR_BLOCK_START;
 };
 
 // src/atn/BasicBlockStartState.ts
 var BasicBlockStartState = class extends BlockStartState {
-  static {
-    __name(this, "BasicBlockStartState");
-  }
   static stateType = ATNState.BLOCK_START;
 };
 
 // src/atn/AtomTransition.ts
 var AtomTransition = class extends Transition {
-  static {
-    __name(this, "AtomTransition");
-  }
   /** The token type or character value; or, signifies special label. */
   labelValue;
   #label;
@@ -3964,9 +3817,6 @@ var AtomTransition = class extends Transition {
 
 // src/atn/RuleTransition.ts
 var RuleTransition = class extends Transition {
-  static {
-    __name(this, "RuleTransition");
-  }
   ruleIndex;
   precedence;
   followState;
@@ -3989,9 +3839,6 @@ var RuleTransition = class extends Transition {
 
 // src/atn/RangeTransition.ts
 var RangeTransition = class extends Transition {
-  static {
-    __name(this, "RangeTransition");
-  }
   start;
   stop;
   #label = new IntervalSet();
@@ -4017,9 +3864,6 @@ var RangeTransition = class extends Transition {
 
 // src/atn/ActionTransition.ts
 var ActionTransition = class extends Transition {
-  static {
-    __name(this, "ActionTransition");
-  }
   ruleIndex;
   actionIndex;
   isCtxDependent;
@@ -4045,9 +3889,6 @@ var ActionTransition = class extends Transition {
 
 // src/atn/EpsilonTransition.ts
 var EpsilonTransition = class extends Transition {
-  static {
-    __name(this, "EpsilonTransition");
-  }
   #outermostPrecedenceReturn;
   constructor(target, outermostPrecedenceReturn = -1) {
     super(target);
@@ -4080,9 +3921,6 @@ var EpsilonTransition = class extends Transition {
 
 // src/atn/WildcardTransition.ts
 var WildcardTransition = class extends Transition {
-  static {
-    __name(this, "WildcardTransition");
-  }
   get transitionType() {
     return Transition.WILDCARD;
   }
@@ -4096,9 +3934,6 @@ var WildcardTransition = class extends Transition {
 
 // src/atn/AbstractPredicateTransition.ts
 var AbstractPredicateTransition = class extends Transition {
-  static {
-    __name(this, "AbstractPredicateTransition");
-  }
   constructor(target) {
     super(target);
   }
@@ -4106,9 +3941,6 @@ var AbstractPredicateTransition = class extends Transition {
 
 // src/atn/PredicateTransition.ts
 var PredicateTransition = class extends AbstractPredicateTransition {
-  static {
-    __name(this, "PredicateTransition");
-  }
   ruleIndex;
   predIndex;
   isCtxDependent;
@@ -4138,9 +3970,6 @@ var PredicateTransition = class extends AbstractPredicateTransition {
 
 // src/atn/PrecedencePredicateTransition.ts
 var PrecedencePredicateTransition = class extends AbstractPredicateTransition {
-  static {
-    __name(this, "PrecedencePredicateTransition");
-  }
   precedence;
   constructor(target, precedence) {
     super(target);
@@ -4185,9 +4014,6 @@ var LexerActionType = {
 
 // src/atn/LexerSkipAction.ts
 var LexerSkipAction = class _LexerSkipAction {
-  static {
-    __name(this, "LexerSkipAction");
-  }
   /** Provides a singleton instance of this parameter-less lexer action. */
   static instance = new _LexerSkipAction();
   actionType;
@@ -4211,9 +4037,6 @@ var LexerSkipAction = class _LexerSkipAction {
 
 // src/atn/LexerChannelAction.ts
 var LexerChannelAction = class _LexerChannelAction {
-  static {
-    __name(this, "LexerChannelAction");
-  }
   channel;
   actionType;
   isPositionDependent = false;
@@ -4254,9 +4077,6 @@ var LexerChannelAction = class _LexerChannelAction {
 
 // src/atn/LexerCustomAction.ts
 var LexerCustomAction = class _LexerCustomAction {
-  static {
-    __name(this, "LexerCustomAction");
-  }
   ruleIndex;
   actionIndex;
   actionType;
@@ -4303,9 +4123,6 @@ var LexerCustomAction = class _LexerCustomAction {
 
 // src/atn/LexerMoreAction.ts
 var LexerMoreAction = class _LexerMoreAction {
-  static {
-    __name(this, "LexerMoreAction");
-  }
   static instance = new _LexerMoreAction();
   actionType;
   isPositionDependent = false;
@@ -4331,9 +4148,6 @@ var LexerMoreAction = class _LexerMoreAction {
 
 // src/atn/LexerTypeAction.ts
 var LexerTypeAction = class _LexerTypeAction {
-  static {
-    __name(this, "LexerTypeAction");
-  }
   type;
   actionType;
   isPositionDependent = false;
@@ -4370,9 +4184,6 @@ var LexerTypeAction = class _LexerTypeAction {
 
 // src/atn/LexerPushModeAction.ts
 var LexerPushModeAction = class _LexerPushModeAction {
-  static {
-    __name(this, "LexerPushModeAction");
-  }
   mode;
   actionType;
   isPositionDependent = false;
@@ -4413,9 +4224,6 @@ var LexerPushModeAction = class _LexerPushModeAction {
 
 // src/atn/LexerPopModeAction.ts
 var LexerPopModeAction = class _LexerPopModeAction {
-  static {
-    __name(this, "LexerPopModeAction");
-  }
   static instance = new _LexerPopModeAction();
   actionType;
   isPositionDependent = false;
@@ -4441,9 +4249,6 @@ var LexerPopModeAction = class _LexerPopModeAction {
 
 // src/atn/LexerModeAction.ts
 var LexerModeAction = class _LexerModeAction {
-  static {
-    __name(this, "LexerModeAction");
-  }
   mode;
   actionType;
   isPositionDependent = false;
@@ -4484,9 +4289,6 @@ var LexerModeAction = class _LexerModeAction {
 
 // src/atn/ATNDeserializer.ts
 var ATNDeserializer = class _ATNDeserializer {
-  static {
-    __name(this, "ATNDeserializer");
-  }
   static SERIALIZED_VERSION = 4;
   static stateTypeMapper = /* @__PURE__ */ new Map([
     [ATNState.INVALID_TYPE, void 0],
@@ -4948,9 +4750,6 @@ var ATNDeserializer = class _ATNDeserializer {
 
 // src/misc/OrderedHashMap.ts
 var OrderedHashMap = class _OrderedHashMap extends HashMap {
-  static {
-    __name(this, "OrderedHashMap");
-  }
   #keys = [];
   clear() {
     super.clear();
@@ -4981,7 +4780,7 @@ var OrderedHashMap = class _OrderedHashMap extends HashMap {
       [Symbol.iterator]: () => {
         let index = 0;
         return {
-          next: /* @__PURE__ */ __name(() => {
+          next: () => {
             if (index < this.#keys.length) {
               return {
                 done: false,
@@ -4992,7 +4791,7 @@ var OrderedHashMap = class _OrderedHashMap extends HashMap {
               done: true,
               value: void 0
             };
-          }, "next")
+          }
         };
       }
     };
@@ -5013,9 +4812,6 @@ var OrderedHashMap = class _OrderedHashMap extends HashMap {
 
 // src/atn/ATNSerializer.ts
 var ATNSerializer = class _ATNSerializer {
-  static {
-    __name(this, "ATNSerializer");
-  }
   atn;
   data = [];
   // Note that we use a LinkedHashMap as a set to maintain insertion order while deduplicating entries with the
@@ -5339,9 +5135,6 @@ var ATNSerializer = class _ATNSerializer {
 
 // src/dfa/DFAState.ts
 var DFAState = class _DFAState {
-  static {
-    __name(this, "DFAState");
-  }
   stateNumber = -1;
   configs;
   /**
@@ -5442,9 +5235,6 @@ var DFAState = class _DFAState {
 
 // src/atn/ATNSimulator.ts
 var ATNSimulator = class {
-  static {
-    __name(this, "ATNSimulator");
-  }
   /** Must distinguish between missing edge and edge we know leads nowhere */
   static ERROR = DFAState.fromState(2147483647);
   atn;
@@ -5486,9 +5276,6 @@ var ATNSimulator = class {
 
 // src/atn/CodePointTransitions.ts
 var CodePointTransitions = class _CodePointTransitions {
-  static {
-    __name(this, "CodePointTransitions");
-  }
   /** @returns new {@link AtomTransition}     */
   static createWithCodePoint(target, codePoint) {
     return _CodePointTransitions.createWithCodePointRange(target, codePoint, codePoint);
@@ -5501,9 +5288,6 @@ var CodePointTransitions = class _CodePointTransitions {
 
 // src/atn/DecisionInfo.ts
 var DecisionInfo = class {
-  static {
-    __name(this, "DecisionInfo");
-  }
   /**
    * The decision number, which is an index into {@link ATN.decisionToState}.
    */
@@ -5684,9 +5468,6 @@ var DecisionInfo = class {
 
 // src/atn/LexerATNConfig.ts
 var LexerATNConfig = class _LexerATNConfig extends ATNConfig {
-  static {
-    __name(this, "LexerATNConfig");
-  }
   /**
    * This is the backing field for {@link #getLexerActionExecutor}.
    */
@@ -5734,9 +5515,6 @@ var LexerATNConfig = class _LexerATNConfig extends ATNConfig {
 
 // src/BaseErrorListener.ts
 var BaseErrorListener = class {
-  static {
-    __name(this, "BaseErrorListener");
-  }
   syntaxError(recognizer, offendingSymbol, line, column, msg, e) {
   }
   reportAmbiguity(recognizer, dfa, startIndex, stopIndex, exact, ambigAlts, configs) {
@@ -5749,9 +5527,6 @@ var BaseErrorListener = class {
 
 // src/ConsoleErrorListener.ts
 var ConsoleErrorListener = class _ConsoleErrorListener extends BaseErrorListener {
-  static {
-    __name(this, "ConsoleErrorListener");
-  }
   /**
    * Provides a default instance of {@link ConsoleErrorListener}.
    */
@@ -5767,9 +5542,6 @@ var ProxyErrorListener = class extends BaseErrorListener {
     super();
     this.delegates = delegates;
     return this;
-  }
-  static {
-    __name(this, "ProxyErrorListener");
   }
   syntaxError(recognizer, offendingSymbol, line, column, msg, e) {
     this.delegates.forEach((d) => {
@@ -5795,9 +5567,6 @@ var ProxyErrorListener = class extends BaseErrorListener {
 
 // src/Recognizer.ts
 var Recognizer = class _Recognizer {
-  static {
-    __name(this, "Recognizer");
-  }
   static EOF = -1;
   static tokenTypeMapCache = /* @__PURE__ */ new Map();
   static ruleIndexMapCache = /* @__PURE__ */ new Map();
@@ -5911,9 +5680,6 @@ var Recognizer = class _Recognizer {
 
 // src/CommonTokenFactory.ts
 var CommonTokenFactory = class _CommonTokenFactory {
-  static {
-    __name(this, "CommonTokenFactory");
-  }
   /**
    * The default {@link CommonTokenFactory} instance.
    *
@@ -5956,9 +5722,6 @@ var CommonTokenFactory = class _CommonTokenFactory {
 
 // src/RecognitionException.ts
 var RecognitionException = class _RecognitionException extends Error {
-  static {
-    __name(this, "RecognitionException");
-  }
   ctx;
   /**
    * The current {@link Token} when an error occurred. Since not all streams
@@ -6014,9 +5777,6 @@ var RecognitionException = class _RecognitionException extends Error {
 
 // src/LexerNoViableAltException.ts
 var LexerNoViableAltException = class extends RecognitionException {
-  static {
-    __name(this, "LexerNoViableAltException");
-  }
   startIndex;
   deadEndConfigs;
   constructor(lexer, input, startIndex, deadEndConfigs) {
@@ -6035,9 +5795,6 @@ var LexerNoViableAltException = class extends RecognitionException {
 
 // src/Lexer.ts
 var Lexer = class _Lexer extends Recognizer {
-  static {
-    __name(this, "Lexer");
-  }
   static DEFAULT_MODE = 0;
   static MORE = -2;
   static SKIP = -3;
@@ -6349,9 +6106,6 @@ var Lexer = class _Lexer extends Recognizer {
 
 // src/misc/OrderedHashSet.ts
 var OrderedHashSet = class _OrderedHashSet extends HashSet {
-  static {
-    __name(this, "OrderedHashSet");
-  }
   #elements = [];
   getOrAdd(o) {
     const oldSize = this.size;
@@ -6388,9 +6142,6 @@ var OrderedHashSet = class _OrderedHashSet extends HashSet {
 
 // src/atn/OrderedATNConfigSet.ts
 var OrderedATNConfigSet = class extends ATNConfigSet {
-  static {
-    __name(this, "OrderedATNConfigSet");
-  }
   constructor() {
     super();
     this.configLookup = new OrderedHashSet();
@@ -6399,9 +6150,6 @@ var OrderedATNConfigSet = class extends ATNConfigSet {
 
 // src/atn/LexerIndexedCustomAction.ts
 var LexerIndexedCustomAction = class _LexerIndexedCustomAction {
-  static {
-    __name(this, "LexerIndexedCustomAction");
-  }
   offset;
   action;
   actionType;
@@ -6441,9 +6189,6 @@ var LexerIndexedCustomAction = class _LexerIndexedCustomAction {
 
 // src/atn/LexerActionExecutor.ts
 var LexerActionExecutor = class _LexerActionExecutor {
-  static {
-    __name(this, "LexerActionExecutor");
-  }
   lexerActions;
   actionType;
   isPositionDependent = false;
@@ -6604,9 +6349,6 @@ var LexerActionExecutor = class _LexerActionExecutor {
 
 // src/dfa/DFASerializer.ts
 var DFASerializer = class {
-  static {
-    __name(this, "DFASerializer");
-  }
   dfa;
   vocabulary;
   constructor(dfa, vocabulary) {
@@ -6657,22 +6399,16 @@ var DFASerializer = class {
 
 // src/dfa/LexerDFASerializer.ts
 var LexerDFASerializer = class extends DFASerializer {
-  static {
-    __name(this, "LexerDFASerializer");
-  }
   constructor(dfa) {
     super(dfa, Vocabulary.EMPTY_VOCABULARY);
   }
-  getEdgeLabel = /* @__PURE__ */ __name((i) => {
+  getEdgeLabel = (i) => {
     return "'" + String.fromCharCode(i) + "'";
-  }, "getEdgeLabel");
+  };
 };
 
 // src/dfa/DFA.ts
 var DFA = class {
-  static {
-    __name(this, "DFA");
-  }
   s0;
   decision;
   /** From which ATN state did we create this DFA? */
@@ -6717,7 +6453,7 @@ var DFA = class {
    * @throws IllegalStateException if this is not a precedence DFA.
    * @see #isPrecedenceDfa
    */
-  getPrecedenceStartState = /* @__PURE__ */ __name((precedence) => {
+  getPrecedenceStartState = (precedence) => {
     if (!this.isPrecedenceDfa) {
       throw new Error(`Only precedence DFAs may contain a precedence start state.`);
     }
@@ -6725,14 +6461,14 @@ var DFA = class {
       return void 0;
     }
     return this.s0.edges[precedence];
-  }, "getPrecedenceStartState");
+  };
   /**
    * Set the start state for a specific precedence value.
    *
    * @param precedence The current precedence.
    * @param startState The start state corresponding to the specified precedence.
    */
-  setPrecedenceStartState = /* @__PURE__ */ __name((precedence, startState) => {
+  setPrecedenceStartState = (precedence, startState) => {
     if (!this.isPrecedenceDfa) {
       throw new Error(`Only precedence DFAs may contain a precedence start state.`);
     }
@@ -6740,7 +6476,7 @@ var DFA = class {
       return;
     }
     this.s0.edges[precedence] = startState;
-  }, "setPrecedenceStartState");
+  };
   /**
    * @returns a list of all states in this DFA, ordered by state number.
    */
@@ -6789,9 +6525,6 @@ var DFA = class {
 
 // src/atn/LexerATNSimulator.ts
 var LexerATNSimulator = class _LexerATNSimulator extends ATNSimulator {
-  static {
-    __name(this, "LexerATNSimulator");
-  }
   static debug = false;
   decisionToDFA;
   recognizer = null;
@@ -7181,14 +6914,14 @@ var LexerATNSimulator = class _LexerATNSimulator extends ATNSimulator {
     this.#lexerATNConfigFactory[Transition.EPSILON] = (input, config, trans) => {
       return LexerATNConfig.createWithConfig(trans.target, config);
     };
-    const simple = /* @__PURE__ */ __name((input, config, trans, configs, speculative, treatEofAsEpsilon) => {
+    const simple = (input, config, trans, configs, speculative, treatEofAsEpsilon) => {
       if (treatEofAsEpsilon) {
         if (trans.matches(Token.EOF, this.#options.minCodePoint, this.#options.maxCodePoint)) {
           return LexerATNConfig.createWithConfig(trans.target, config);
         }
       }
       return null;
-    }, "simple");
+    };
     this.#lexerATNConfigFactory[Transition.ATOM] = simple;
     this.#lexerATNConfigFactory[Transition.RANGE] = simple;
     this.#lexerATNConfigFactory[Transition.SET] = simple;
@@ -7287,9 +7020,6 @@ var LexerATNSimulator = class _LexerATNSimulator extends ATNSimulator {
 
 // src/atn/ParseInfo.ts
 var ParseInfo = class {
-  static {
-    __name(this, "ParseInfo");
-  }
   atnSimulator;
   constructor(atnSimulator) {
     this.atnSimulator = atnSimulator;
@@ -7420,9 +7150,6 @@ var ParseInfo = class {
 
 // src/NoViableAltException.ts
 var NoViableAltException = class extends RecognitionException {
-  static {
-    __name(this, "NoViableAltException");
-  }
   /** Which configurations did we try at input.index() that couldn't match input.LT(1)? */
   deadEndConfigs = null;
   /**
@@ -7446,9 +7173,6 @@ var NoViableAltException = class extends RecognitionException {
 
 // src/utils/DoubleDict.ts
 var DoubleDict = class {
-  static {
-    __name(this, "DoubleDict");
-  }
   cacheMap;
   constructor() {
     this.cacheMap = new HashMap();
@@ -7469,9 +7193,6 @@ var DoubleDict = class {
 
 // src/atn/PredictionMode.ts
 var SubsetEqualityComparer = class _SubsetEqualityComparer {
-  static {
-    __name(this, "SubsetEqualityComparer");
-  }
   static instance = new _SubsetEqualityComparer();
   hashCode(config) {
     let hashCode = MurmurHash.initialize(7);
@@ -7485,9 +7206,6 @@ var SubsetEqualityComparer = class _SubsetEqualityComparer {
   }
 };
 var PredictionMode = class _PredictionMode {
-  static {
-    __name(this, "PredictionMode");
-  }
   /**
    * The SLL(*) prediction mode. This prediction mode ignores the current
    * parser context when making predictions. This is the fastest prediction
@@ -7964,9 +7682,6 @@ var PredictionMode = class _PredictionMode {
 
 // src/atn/ParserATNSimulator.ts
 var ParserATNSimulator = class _ParserATNSimulator extends ATNSimulator {
-  static {
-    __name(this, "ParserATNSimulator");
-  }
   static traceATNSimulator = false;
   static debug;
   static debugAdd = false;
@@ -9167,9 +8882,6 @@ var ParserATNSimulator = class _ParserATNSimulator extends ATNSimulator {
 
 // src/atn/PredictionContextCache.ts
 var PredictionContextCache = class {
-  static {
-    __name(this, "PredictionContextCache");
-  }
   cache = new HashMap(ObjectEqualityComparator.instance);
   /**
    * Add a context to the cache and return it. If the context already exists,
@@ -9200,9 +8912,6 @@ var PredictionContextCache = class {
 
 // src/atn/ProfilingATNSimulator.ts
 var ProfilingATNSimulator = class extends ParserATNSimulator {
-  static {
-    __name(this, "ProfilingATNSimulator");
-  }
   decisions;
   numDecisions = 0;
   currentDecision = 0;
@@ -9406,16 +9115,13 @@ var ProfilingATNSimulator = class extends ParserATNSimulator {
 // src/dfa/PredPrediction.ts
 var PredPrediction;
 ((PredPrediction2) => {
-  PredPrediction2.toString = /* @__PURE__ */ __name((prediction) => {
+  PredPrediction2.toString = (prediction) => {
     return `(${prediction.pred}, ${prediction.alt})`;
-  }, "toString");
+  };
 })(PredPrediction || (PredPrediction = {}));
 
 // src/misc/ParseCancellationException.ts
 var ParseCancellationException = class _ParseCancellationException extends Error {
-  static {
-    __name(this, "ParseCancellationException");
-  }
   constructor(_e) {
     super();
     Error.captureStackTrace(this, _ParseCancellationException);
@@ -9424,9 +9130,6 @@ var ParseCancellationException = class _ParseCancellationException extends Error
 
 // src/misc/InterpreterDataReader.ts
 var InterpreterDataReader = class {
-  static {
-    __name(this, "InterpreterDataReader");
-  }
   /**
    * The structure of the data file is very simple. Everything is line based with empty lines
    * separating the different parts. For lexers the layout is:
@@ -9544,9 +9247,6 @@ var InterpreterDataReader = class {
 
 // src/tree/AbstractParseTreeVisitor.ts
 var AbstractParseTreeVisitor = class {
-  static {
-    __name(this, "AbstractParseTreeVisitor");
-  }
   visit(tree) {
     return tree.accept(this);
   }
@@ -9584,9 +9284,6 @@ var AbstractParseTreeVisitor = class {
 
 // src/tree/ParseTreeWalker.ts
 var ParseTreeWalker = class _ParseTreeWalker {
-  static {
-    __name(this, "ParseTreeWalker");
-  }
   static DEFAULT = new _ParseTreeWalker();
   /**
    * Performs a walk on the given parse tree starting at the root and going down recursively
@@ -9641,14 +9338,11 @@ var ParseTreeWalker = class _ParseTreeWalker {
 // src/CharStream.ts
 var CharStream;
 ((CharStream2) => {
-  CharStream2.fromString = /* @__PURE__ */ __name((str) => {
+  CharStream2.fromString = (str) => {
     return new CharStreamImpl(str);
-  }, "fromString");
+  };
 })(CharStream || (CharStream = {}));
 var CharStreamImpl = class {
-  static {
-    __name(this, "CharStreamImpl");
-  }
   name = "";
   index = 0;
   data;
@@ -9748,9 +9442,6 @@ var CharStreamImpl = class {
 
 // src/BufferedTokenStream.ts
 var BufferedTokenStream = class {
-  static {
-    __name(this, "BufferedTokenStream");
-  }
   /**
    * The {@link TokenSource} from which tokens for this stream are fetched.
    */
@@ -10099,9 +9790,6 @@ var BufferedTokenStream = class {
 
 // src/CommonTokenStream.ts
 var CommonTokenStream = class extends BufferedTokenStream {
-  static {
-    __name(this, "CommonTokenStream");
-  }
   /**
    * Specifies the channel to use for filtering tokens.
    *
@@ -10168,9 +9856,6 @@ var CommonTokenStream = class extends BufferedTokenStream {
 
 // src/tree/xpath/XPathLexer.ts
 var XPathLexer = class _XPathLexer extends Lexer {
-  static {
-    __name(this, "XPathLexer");
-  }
   static TOKEN_REF = 1;
   static RULE_REF = 2;
   static ANYWHERE = 3;
@@ -13594,18 +13279,12 @@ var XPathLexer = class _XPathLexer extends Lexer {
 
 // src/tree/xpath/XPathLexerErrorListener.ts
 var XPathLexerErrorListener = class extends BaseErrorListener {
-  static {
-    __name(this, "XPathLexerErrorListener");
-  }
   syntaxError(_recognizer, _offendingSymbol, _line, _charPositionInLine, _msg, _e) {
   }
 };
 
 // src/tree/xpath/XPathElement.ts
 var XPathElement = class {
-  static {
-    __name(this, "XPathElement");
-  }
   invert;
   nodeName;
   /**
@@ -13625,9 +13304,6 @@ var XPathElement = class {
 
 // src/tree/xpath/XPathRuleAnywhereElement.ts
 var XPathRuleAnywhereElement = class extends XPathElement {
-  static {
-    __name(this, "XPathRuleAnywhereElement");
-  }
   ruleIndex;
   constructor(ruleName, ruleIndex) {
     super(ruleName);
@@ -13644,9 +13320,6 @@ var XPathRuleAnywhereElement = class extends XPathElement {
 
 // src/tree/xpath/XPathRuleElement.ts
 var XPathRuleElement = class extends XPathElement {
-  static {
-    __name(this, "XPathRuleElement");
-  }
   ruleIndex;
   constructor(ruleName, ruleIndex) {
     super(ruleName);
@@ -13671,9 +13344,6 @@ var XPathRuleElement = class extends XPathElement {
 
 // src/tree/xpath/XPathTokenAnywhereElement.ts
 var XPathTokenAnywhereElement = class extends XPathElement {
-  static {
-    __name(this, "XPathTokenAnywhereElement");
-  }
   tokenType;
   constructor(tokenName, tokenType) {
     super(tokenName);
@@ -13690,9 +13360,6 @@ var XPathTokenAnywhereElement = class extends XPathElement {
 
 // src/tree/xpath/XPathTokenElement.ts
 var XPathTokenElement = class extends XPathElement {
-  static {
-    __name(this, "XPathTokenElement");
-  }
   tokenType;
   constructor(tokenName, tokenType) {
     super(tokenName);
@@ -13717,9 +13384,6 @@ var XPathTokenElement = class extends XPathElement {
 
 // src/tree/xpath/XPathWildcardAnywhereElement.ts
 var XPathWildcardAnywhereElement = class extends XPathElement {
-  static {
-    __name(this, "XPathWildcardAnywhereElement");
-  }
   constructor() {
     super(XPath.WILDCARD);
   }
@@ -13737,9 +13401,6 @@ var XPathWildcardAnywhereElement = class extends XPathElement {
 
 // src/tree/xpath/XPathWildcardElement.ts
 var XPathWildcardElement = class extends XPathElement {
-  static {
-    __name(this, "XPathWildcardElement");
-  }
   constructor() {
     super(XPath.WILDCARD);
   }
@@ -13761,9 +13422,6 @@ var XPathWildcardElement = class extends XPathElement {
 
 // src/tree/xpath/XPath.ts
 var XPath = class _XPath {
-  static {
-    __name(this, "XPath");
-  }
   static WILDCARD = "*";
   // word not operator/separator
   static NOT = "!";
@@ -13896,16 +13554,10 @@ var XPath = class _XPath {
 
 // src/tree/pattern/Chunk.ts
 var Chunk = class {
-  static {
-    __name(this, "Chunk");
-  }
 };
 
 // src/tree/pattern/ParseTreeMatch.ts
 var ParseTreeMatch = class {
-  static {
-    __name(this, "ParseTreeMatch");
-  }
   /**
    * This is the backing field for {@link #getTree()}.
    */
@@ -14040,9 +13692,6 @@ var ParseTreeMatch = class {
 
 // src/tree/pattern/ParseTreePattern.ts
 var ParseTreePattern = class {
-  static {
-    __name(this, "ParseTreePattern");
-  }
   /**
    * This is the backing field for {@link #getPatternRuleIndex()}.
    */
@@ -14159,9 +13808,6 @@ var ParseTreePattern = class {
 
 // src/InputMismatchException.ts
 var InputMismatchException = class extends RecognitionException {
-  static {
-    __name(this, "InputMismatchException");
-  }
   constructor(recognizer) {
     super({ message: "", recognizer, input: recognizer.inputStream, ctx: recognizer.context });
     this.offendingToken = recognizer.getCurrentToken();
@@ -14170,9 +13816,6 @@ var InputMismatchException = class extends RecognitionException {
 
 // src/FailedPredicateException.ts
 var FailedPredicateException = class extends RecognitionException {
-  static {
-    __name(this, "FailedPredicateException");
-  }
   ruleIndex = 0;
   predicateIndex = 0;
   predicate;
@@ -14196,18 +13839,15 @@ var FailedPredicateException = class extends RecognitionException {
     this.offendingToken = recognizer.getCurrentToken();
   }
 };
-var formatMessage = /* @__PURE__ */ __name((predicate, message) => {
+var formatMessage = (predicate, message) => {
   if (message !== null) {
     return message;
   }
   return "failed predicate: {" + predicate + "}?";
-}, "formatMessage");
+};
 
 // src/DefaultErrorStrategy.ts
 var DefaultErrorStrategy = class {
-  static {
-    __name(this, "DefaultErrorStrategy");
-  }
   /**
    * Indicates whether the error strategy is currently "recovering from an
    * error". This is used to suppress reporting multiple error messages while
@@ -14831,9 +14471,6 @@ var DefaultErrorStrategy = class {
 
 // src/BailErrorStrategy.ts
 var BailErrorStrategy = class extends DefaultErrorStrategy {
-  static {
-    __name(this, "BailErrorStrategy");
-  }
   /**
    * Instead of recovering from exception `e`, re-throw it wrapped
    * in a {@link ParseCancellationException} so it is not caught by the
@@ -14858,9 +14495,6 @@ var BailErrorStrategy = class extends DefaultErrorStrategy {
 
 // src/ListTokenSource.ts
 var ListTokenSource = class {
-  static {
-    __name(this, "ListTokenSource");
-  }
   /**
    * The name of the input source. If this value is `null`, a call to
    * {@link #getSourceName} should return the source name used to create the
@@ -14986,9 +14620,6 @@ var ListTokenSource = class {
 
 // src/InterpreterRuleContext.ts
 var InterpreterRuleContext = class extends ParserRuleContext {
-  static {
-    __name(this, "InterpreterRuleContext");
-  }
   /** This is the backing field for {@link #getRuleIndex}. */
   #ruleIndex;
   constructor(ruleIndex, parent, invokingStateNumber) {
@@ -15002,9 +14633,6 @@ var InterpreterRuleContext = class extends ParserRuleContext {
 
 // src/TraceListener.ts
 var TraceListener = class {
-  static {
-    __name(this, "TraceListener");
-  }
   parser;
   constructor(parser) {
     this.parser = parser;
@@ -15024,9 +14652,6 @@ var TraceListener = class {
 
 // src/Parser.ts
 var Parser = class extends Recognizer {
-  static {
-    __name(this, "Parser");
-  }
   /** For testing only. */
   printer = null;
   /**
@@ -15650,9 +15275,6 @@ var Parser = class extends Recognizer {
 
 // src/ParserInterpreter.ts
 var ParserInterpreter = class extends Parser {
-  static {
-    __name(this, "ParserInterpreter");
-  }
   rootContext;
   overrideDecisionRoot = null;
   parentContextStack = [];
@@ -15910,9 +15532,6 @@ var ParserInterpreter = class extends Parser {
 
 // src/misc/MultiMap.ts
 var MultiMap = class extends Map {
-  static {
-    __name(this, "MultiMap");
-  }
   map(key, value) {
     let elementsForKey = this.get(key);
     if (!elementsForKey) {
@@ -15935,9 +15554,6 @@ var MultiMap = class extends Map {
 
 // src/tree/pattern/CannotInvokeStartRuleError.ts
 var CannotInvokeStartRuleError = class extends Error {
-  static {
-    __name(this, "CannotInvokeStartRuleError");
-  }
   constructor(e) {
     super();
     this.cause = e;
@@ -15946,9 +15562,6 @@ var CannotInvokeStartRuleError = class extends Error {
 
 // src/tree/pattern/RuleTagToken.ts
 var RuleTagToken = class {
-  static {
-    __name(this, "RuleTagToken");
-  }
   /** The name of the label associated with the rule tag. */
   label;
   /** The name of the parser rule associated with this rule tag. */
@@ -16039,16 +15652,10 @@ var RuleTagToken = class {
 
 // src/tree/pattern/StartRuleDoesNotConsumeFullPatternError.ts
 var StartRuleDoesNotConsumeFullPatternError = class extends Error {
-  static {
-    __name(this, "StartRuleDoesNotConsumeFullPatternError");
-  }
 };
 
 // src/tree/pattern/TagChunk.ts
 var TagChunk = class extends Chunk {
-  static {
-    __name(this, "TagChunk");
-  }
   tag;
   label;
   constructor(...args) {
@@ -16082,9 +15689,6 @@ var TagChunk = class extends Chunk {
 
 // src/tree/pattern/TextChunk.ts
 var TextChunk = class extends Chunk {
-  static {
-    __name(this, "TextChunk");
-  }
   text;
   /**
    * Constructs a new instance of {@link TextChunk} with the specified text.
@@ -16105,9 +15709,6 @@ var TextChunk = class extends Chunk {
 
 // src/tree/pattern/TokenTagToken.ts
 var TokenTagToken = class extends CommonToken {
-  static {
-    __name(this, "TokenTagToken");
-  }
   tokenName;
   /**
    * The name of the label associated with the rule tag, or undefined if this is an unlabeled rule tag.
@@ -16138,9 +15739,6 @@ var TokenTagToken = class extends CommonToken {
 
 // src/tree/pattern/ParseTreePatternMatcher.ts
 var ParseTreePatternMatcher = class {
-  static {
-    __name(this, "ParseTreePatternMatcher");
-  }
   start = "<";
   stop = ">";
   escape = "\\";
@@ -16482,9 +16080,6 @@ var ParseTreePatternMatcher = class {
 
 // src/DiagnosticErrorListener.ts
 var DiagnosticErrorListener = class extends BaseErrorListener {
-  static {
-    __name(this, "DiagnosticErrorListener");
-  }
   /**
    * When `true`, only exactly known ambiguities are reported.
    */
@@ -16493,7 +16088,7 @@ var DiagnosticErrorListener = class extends BaseErrorListener {
     super();
     this.exactOnly = exactOnly ?? true;
   }
-  reportAmbiguity = /* @__PURE__ */ __name((recognizer, dfa, startIndex, stopIndex, exact, ambigAlts, configs) => {
+  reportAmbiguity = (recognizer, dfa, startIndex, stopIndex, exact, ambigAlts, configs) => {
     if (this.exactOnly && !exact) {
       return;
     }
@@ -16502,20 +16097,20 @@ var DiagnosticErrorListener = class extends BaseErrorListener {
     const text = recognizer.tokenStream?.getTextFromInterval(Interval.of(startIndex, stopIndex));
     const message = `reportAmbiguity d=${decision}: ambigAlts=${conflictingAlts}, input='${text}'`;
     recognizer.notifyErrorListeners(message, null, null);
-  }, "reportAmbiguity");
-  reportAttemptingFullContext = /* @__PURE__ */ __name((recognizer, dfa, startIndex, stopIndex, _conflictingAlts, _configs) => {
+  };
+  reportAttemptingFullContext = (recognizer, dfa, startIndex, stopIndex, _conflictingAlts, _configs) => {
     const decision = this.getDecisionDescription(recognizer, dfa);
     const text = recognizer.tokenStream?.getTextFromInterval(Interval.of(startIndex, stopIndex));
     const message = `reportAttemptingFullContext d=${decision}, input='${text}'`;
     recognizer.notifyErrorListeners(message, null, null);
-  }, "reportAttemptingFullContext");
-  reportContextSensitivity = /* @__PURE__ */ __name((recognizer, dfa, startIndex, stopIndex, _prediction, _configs) => {
+  };
+  reportContextSensitivity = (recognizer, dfa, startIndex, stopIndex, _prediction, _configs) => {
     const decision = this.getDecisionDescription(recognizer, dfa);
     const text = recognizer.tokenStream?.getTextFromInterval(Interval.of(startIndex, stopIndex));
     const message = `reportContextSensitivity d=${decision}, input='${text}'`;
     recognizer.notifyErrorListeners(message, null, null);
-  }, "reportContextSensitivity");
-  getDecisionDescription = /* @__PURE__ */ __name((recognizer, dfa) => {
+  };
+  getDecisionDescription = (recognizer, dfa) => {
     const decision = dfa.decision;
     const ruleIndex = dfa.atnStartState.ruleIndex;
     const ruleNames = recognizer.ruleNames;
@@ -16527,7 +16122,7 @@ var DiagnosticErrorListener = class extends BaseErrorListener {
       return decision.toString();
     }
     return `${decision} (${ruleName})`;
-  }, "getDecisionDescription");
+  };
   /**
    * Computes the set of conflicting or ambiguous alternatives from a
    * configuration set, if that information was not already provided by the
@@ -16539,7 +16134,7 @@ var DiagnosticErrorListener = class extends BaseErrorListener {
    * @returns Returns `reportedAlts` if it is not `null`, otherwise
    * returns the set of alternatives represented in `configs`.
    */
-  getConflictingAlts = /* @__PURE__ */ __name((reportedAlts, configs) => {
+  getConflictingAlts = (reportedAlts, configs) => {
     if (reportedAlts) {
       return reportedAlts;
     }
@@ -16548,14 +16143,11 @@ var DiagnosticErrorListener = class extends BaseErrorListener {
       result.set(configs.configs[i].alt);
     }
     return result;
-  }, "getConflictingAlts");
+  };
 };
 
 // src/LexerInterpreter.ts
 var LexerInterpreter = class extends Lexer {
-  static {
-    __name(this, "LexerInterpreter");
-  }
   #grammarFileName;
   #atn;
   #ruleNames;
@@ -16602,9 +16194,6 @@ var LexerInterpreter = class extends Lexer {
 
 // src/RuntimeMetaData.ts
 var RuntimeMetaData = class _RuntimeMetaData {
-  static {
-    __name(this, "RuntimeMetaData");
-  }
   /**
    * A compile-time constant containing the current version of the ANTLR 4
    * runtime library.
@@ -16735,9 +16324,6 @@ var RuntimeMetaData = class _RuntimeMetaData {
 
 // src/TokenStreamRewriter.ts
 var TokenStreamRewriter = class _TokenStreamRewriter {
-  static {
-    __name(this, "TokenStreamRewriter");
-  }
   static DEFAULT_PROGRAM_NAME = "default";
   static PROGRAM_INIT_SIZE = 100;
   static MIN_TOKEN_INDEX = 0;
@@ -16986,9 +16572,6 @@ var TokenStreamRewriter = class _TokenStreamRewriter {
   }
 };
 var RewriteOperation = class {
-  static {
-    __name(this, "RewriteOperation");
-  }
   /** What index into rewrites List are we? */
   instructionIndex;
   /** Token buffer index. */
@@ -17009,9 +16592,6 @@ var RewriteOperation = class {
   }
 };
 var InsertBeforeOp = class extends RewriteOperation {
-  static {
-    __name(this, "InsertBeforeOp");
-  }
   constructor(tokens, index, instructionIndex, text) {
     super(tokens, index, instructionIndex, text);
   }
@@ -17032,9 +16612,6 @@ var InsertBeforeOp = class extends RewriteOperation {
   }
 };
 var InsertAfterOp = class extends InsertBeforeOp {
-  static {
-    __name(this, "InsertAfterOp");
-  }
   constructor(tokens, index, instructionIndex, text) {
     super(tokens, index + 1, instructionIndex, text);
   }
@@ -17043,9 +16620,6 @@ var InsertAfterOp = class extends InsertBeforeOp {
   }
 };
 var ReplaceOp = class extends RewriteOperation {
-  static {
-    __name(this, "ReplaceOp");
-  }
   lastIndex;
   constructor(tokens, from, to, instructionIndex, text) {
     super(tokens, from, instructionIndex, text);
@@ -17069,15 +16643,12 @@ var ReplaceOp = class extends RewriteOperation {
 };
 
 // src/WritableToken.ts
-var isWritableToken = /* @__PURE__ */ __name((candidate) => {
+var isWritableToken = (candidate) => {
   return candidate.setText !== void 0;
-}, "isWritableToken");
+};
 
 // src/UnbufferedTokenStream.ts
 var UnbufferedTokenStream = class {
-  static {
-    __name(this, "UnbufferedTokenStream");
-  }
   tokenSource;
   /**
    * A moving window buffer of the data being scanned. While there's a marker,
